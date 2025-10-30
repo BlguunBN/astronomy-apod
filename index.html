@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astronomy Picture of the Day</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="cosmic-background">
+        <div class="stars"></div>
+        <div class="moving-stars"></div>
+    </div>
+    
+    <div class="app-container">
+        <header class="glass-panel header-panel">
+            <div class="header-content">
+                <h1 class="app-title">
+                    <span class="title-icon">🌌</span>
+                    <span class="title-text">Astronomy Picture of the Day</span>
+                </h1>
+                <p class="app-subtitle">Discover the cosmos through daily astronomical imagery</p>
+            </div>
+        </header>
+
+        <nav class="glass-panel controls-panel">
+            <div class="control-group">
+                <div class="date-selector">
+                    <label for="date-input" class="control-label">Select Date</label>
+                    <input type="date" id="date-input" class="glass-input" max="" />
+                </div>
+                <div class="action-buttons">
+                    <button id="fetch-btn" class="glass-btn primary">
+                        <span class="btn-icon">🔍</span>
+                        <span>Get Picture</span>
+                    </button>
+                    <button id="today-btn" class="glass-btn secondary">
+                        <span class="btn-icon">📅</span>
+                        <span>Today</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div class="loading-panel glass-panel" id="loading">
+            <div class="loading-content">
+                <div class="cosmic-spinner">
+                    <div class="spinner-ring"></div>
+                    <div class="spinner-ring"></div>
+                    <div class="spinner-ring"></div>
+                </div>
+                <p class="loading-text">Loading cosmic imagery...</p>
+            </div>
+        </div>
+
+        <div class="error-panel glass-panel" id="error" style="display: none;">
+            <div class="error-content">
+                <div class="error-icon">⚠️</div>
+                <div class="error-message" id="error-message">Something went wrong</div>
+            </div>
+        </div>
+
+        <main class="content-grid" id="content" style="display: none;">
+            <div class="media-panel glass-panel">
+                <div class="media-container">
+                    <div class="media-wrapper" id="media-wrapper">
+                        <!-- Image or video will be inserted here -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-panel glass-panel">
+                <div class="info-content">
+                    <div class="title-section">
+                        <h2 class="picture-title" id="picture-title">Title</h2>
+                        <div class="date-badge">
+                            <span class="date-icon">📅</span>
+                            <span class="picture-date" id="picture-date">Date</span>
+                        </div>
+                    </div>
+                    
+                    <div class="description-section">
+                        <div class="section-header">
+                            <span class="section-icon">📖</span>
+                            <span class="section-title">Description</span>
+                        </div>
+                        <p class="picture-explanation" id="picture-explanation">Description</p>
+                    </div>
+                    
+                    <div class="credit-section" id="picture-credit" style="display: none;">
+                        <div class="section-header">
+                            <span class="section-icon">📷</span>
+                            <span class="section-title">Credit</span>
+                        </div>
+                        <p class="credit-text" id="credit-text"></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="glass-panel footer-panel">
+            <div class="footer-content">
+                <p class="footer-text">
+                    <span class="footer-icon">🚀</span>
+                    Powered by NASA's Astronomy Picture of the Day API
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
